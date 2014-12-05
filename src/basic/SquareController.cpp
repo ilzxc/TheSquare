@@ -21,7 +21,6 @@ SquareController::~SquareController()
 
 void SquareController::bindModel( std::shared_ptr< SquareModel > modelRef )
 {
-    
 }
 
 void SquareController::mouseDown( const ci::Vec2f& position )

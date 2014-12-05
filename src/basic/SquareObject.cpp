@@ -16,7 +16,8 @@ SquareObject::SquareObject()
 }
 
 SquareObject::SquareObject( const std::string& resource_string )
-: model { make_shared< SquareModel > () },
+: mode( 0 ),
+  model { make_shared< SquareModel > () },
   view  { make_shared< SquareRender > ( model->getSquareRotationAnglePtr(), model->getOpacity() ) }
 {
     shared_ptr< SquareFbo > to_bind = make_shared< SquareFbo > ( resource_string, model->getTextureRotationAnglePtr(), model->getTextureScrollPositionPtr() );
@@ -30,41 +31,42 @@ SquareObject::~SquareObject()
 
 void SquareObject::interact()
 {
-//    model->setTextureRotationAcceleration( 0.0005f, 100.f );
-//    model->setTextureScrollAcceleration( ci::Vec2f{ -0.2, 0.29 }, 20.f );
+    mode = 0;
 }
 
 void SquareObject::update()
 {
+    model->update();
+    view->update();
+    
+    //model->setTextureScrollVelocity( ci::Vec2f( 50, 50 ), 500 );
+    
     if ( mode == 0 ) {
         model->setSquareRotationVelocity( 3.0f, 20.f );
         ++mode;
     } else if ( mode == 1 ) {
         if ( model->getSquareRotationVelocity() >= 3.f ) {
             model->setSquareRotationAcceleration( 0.f );
-            model->setTextureRotationVelocity( model->getSquareRotationVelocity() * -1.f, 10.f );
+            model->setTextureRotationVelocity( model->getSquareRotationVelocity() * -1.f, 20.f );
             ++mode;
         }
     } else if ( mode == 2 ) {
         if ( model->getTextureRotationVelocity() == model->getSquareRotationVelocity() * -1.f ) {
-            cout << "hit it" << endl;
+            //cout << "hit it" << endl;
             model->setSquareRotationVelocity( 0.f, 10.f );
             ++mode;
         }
     } else if ( mode == 3 ) {
         model->setTextureRotationVelocity( model->getSquareRotationVelocity() * -1 );
         if ( model->getSquareRotationVelocity() == 0.f ) {
-            cout << "yay" << endl;
-            model->setSquareRotationAcceleration( -0.02, 20.f );
-            model->setTextureScrollAcceleration( ci::Vec2f{ -0.001f, 0.001f }, 20.f );
+            //cout << "yay" << endl;
+            model->setSquareRotationVelocity( -3.02, 20.f );
+            model->setTextureScrollVelocity( ci::Vec2f{ -0.8f, 0.9f } );
             ++mode;
         }
     } else if ( mode == 4 ) {
-        model->setTextureRotationVelocity( model->getSquareRotationVelocity() * -1 );
+        model->setTextureRotationVelocity( model->getSquareRotationVelocity() * -1.f );
     }
-    
-    model->update();
-    view->update();
 }
 
 void SquareObject::draw()

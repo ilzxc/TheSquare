@@ -106,7 +106,6 @@ void SquareModel::update()
 
 void SquareModel::setTween( Anim< float >& which, const float new_value, const float time_in_seconds )
 {
-    
     auto test = app::timeline().apply( &which,
                             which.operator const float &(),
                             new_value,
@@ -116,10 +115,10 @@ void SquareModel::setTween( Anim< float >& which, const float new_value, const f
 
 void SquareModel::setTween( Anim< Vec2f >& which, const Vec2f& new_value, const float time_in_seconds )
 {
+    auto f = EaseOutCubic();
     app::timeline().apply( &which,
                             which.operator const ci::Vec2< float > &(),
                             new_value,
                             time_in_seconds,
-                            EaseInOutCubic() );
-    
+                            f );
 }
