@@ -1,6 +1,8 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
+#include "cinder/audio/Context.h"
 #include "SquareObject.h"
+#include "PdNode.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -15,11 +17,14 @@ class TheSquareApp : public AppNative {
     void mouseUp( MouseEvent event );
 	void update();
 	void draw();
+    //void shutdown();
     
   private:
     shared_ptr< SquareObject > test;
     Rectf square_bounds;
     Rectf left_bounds, right_bounds;
+    shared_ptr< cipd::PureDataNode > pd;
+    cipd::PatchRef patch;
 };
 
 void TheSquareApp::prepareSettings( Settings* settings )
@@ -34,6 +39,16 @@ void TheSquareApp::setup()
 {
     gl::enableAlphaBlending();
     test = make_shared< SquareObject >( "Paper-2.png" );
+    
+    auto context = audio::master();
+    pd = context->makeNode( new cipd::PureDataNode( audio::Node::Format() ) );
+    pd->setModel( test->getModel() );
+    std::string internal_path = "/Contents/Resources/pd/";
+    pd->addToSearchPath( app::getAppPath().string() + internal_path );
+    patch = pd->loadPatch( loadResource( "pd/test_patchbay.pd" ) );
+    pd->enable();
+    pd >> audio::master()->getOutput();
+    context->enable();
 
     /*
    square = make_shared< SquareTexture >( "Paper-2.png" );
@@ -83,6 +98,7 @@ void TheSquareApp::mouseUp( MouseEvent event )
 void TheSquareApp::update()
 {
     test->update();
+    pd->sendSquareBundle();
 }
 
 void TheSquareApp::draw()

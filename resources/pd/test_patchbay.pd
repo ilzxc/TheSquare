@@ -1,0 +1,18 @@
+#N canvas 485 303 665 363 10;
+#X obj 22 158 osc~ 666;
+#X obj 22 215 *~;
+#X obj 84 183 vline~ 0;
+#X obj 22 253 dac~;
+#X msg 84 158 \$1 100;
+#X obj 84 29 fromCinder _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+_ _ _;
+#X obj 84 114 clip 0 1;
+#X obj 113 58 abs;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 3 1;
+#X connect 2 0 1 1;
+#X connect 4 0 2 0;
+#X connect 5 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;

@@ -18,6 +18,8 @@
 #include "cinder/audio/Node.h"
 #include "cinder/Thread.h"
 
+#include "SquareModel.h"
+
 namespace cipd {
     
     typedef std::shared_ptr<pd::Patch> PatchRef;
@@ -29,6 +31,7 @@ namespace cipd {
         ~PureDataNode();
         
         void initialize() override;
+        void setModel( std::shared_ptr< SquareModel > model ) { mModel = model; }
         void uninitialize() override;
         void process( ci::audio::Buffer *buffer );
         
@@ -39,6 +42,8 @@ namespace cipd {
         void        addToSearchPath( const std::string& path );
         
         // thread-safe senders
+        void sendSquareBundle();
+        
         void sendBang( const std::string& dest );
         void sendFloat( const std::string& dest, float value );
         void sendSymbol( const std::string& dest, const std::string& symbol );
@@ -55,6 +60,9 @@ namespace cipd {
         size_t		mNumTicksPerBlock;
         
         ci::audio::BufferInterleaved mBufferInterleaved;
+        
+        std::shared_ptr< SquareModel > mModel;
+        std::vector< std::string > mModelParams;
     };
     
 } // namespace cipd

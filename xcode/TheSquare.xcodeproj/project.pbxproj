@@ -46,6 +46,7 @@
 		9506AD7C19C44919AB87A20C /* b2EdgeShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E7444508784136BC095E2B /* b2EdgeShape.cpp */; };
 		95F068F7C3004B4E877E2E66 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52A27D6CB9314E349CC91B65 /* b2BroadPhase.cpp */; };
 		972FCF521A19CC1700DB193E /* Scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 972FCF501A19CC1700DB193E /* Scale.cpp */; };
+		97618D051A3AFF5500BB8FC3 /* pd in Resources */ = {isa = PBXBuildFile; fileRef = 97618D041A3AFF5500BB8FC3 /* pd */; };
 		97BF03C11A149848001E7BFB /* SquareController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BF03BA1A149848001E7BFB /* SquareController.cpp */; };
 		97BF03C21A149848001E7BFB /* SquareFbo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BF03BB1A149848001E7BFB /* SquareFbo.cpp */; };
 		97BF03C31A149848001E7BFB /* SquareModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BF03BC1A149848001E7BFB /* SquareModel.cpp */; };
@@ -135,7 +136,6 @@
 		97D299FD1A19DD5D0086819D /* x_text.c in Sources */ = {isa = PBXBuildFile; fileRef = 97D299AB1A19DD5D0086819D /* x_text.c */; };
 		97D299FE1A19DD5D0086819D /* x_time.c in Sources */ = {isa = PBXBuildFile; fileRef = 97D299AC1A19DD5D0086819D /* x_time.c */; };
 		97D29A011A19DF610086819D /* SquareAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97D299FF1A19DF610086819D /* SquareAudio.cpp */; };
-		97D29A0D1A1A784C0086819D /* PatchBay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97D29A0B1A1A784C0086819D /* PatchBay.cpp */; };
 		A04B61BBDECD4741B863EC63 /* b2WorldCallbacks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13120D2D3C4F40D88B982C39 /* b2WorldCallbacks.cpp */; };
 		A1F8B2C9450D41A387AED22D /* b2ContactSolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88F8224DACC34846AC7CD628 /* b2ContactSolver.cpp */; };
 		A9ED2EAF087B4F3CB9869210 /* b2PrismaticJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 831B1E91C70E4FF898DC9F94 /* b2PrismaticJoint.cpp */; };
@@ -230,6 +230,7 @@
 		935339E74B1B4782BD4E23DA /* b2ContactManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2ContactManager.h; path = ../blocks/Box2D/src/Box2D/Dynamics/b2ContactManager.h; sourceTree = "<group>"; };
 		972FCF501A19CC1700DB193E /* Scale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scale.cpp; path = ../abstract/Scale.cpp; sourceTree = "<group>"; };
 		972FCF511A19CC1700DB193E /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scale.h; path = ../abstract/Scale.h; sourceTree = "<group>"; };
+		97618D041A3AFF5500BB8FC3 /* pd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pd; path = ../resources/pd; sourceTree = "<group>"; };
 		9793DB161A27FD3D0096A0AA /* SquareEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareEvent.h; path = ../../src/basic/SquareEvent.h; sourceTree = "<group>"; };
 		97BF03B01A149819001E7BFB /* SquareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareController.h; sourceTree = "<group>"; };
 		97BF03B11A149819001E7BFB /* SquareFbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareFbo.h; sourceTree = "<group>"; };
@@ -343,8 +344,6 @@
 		97D299AC1A19DD5D0086819D /* x_time.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = x_time.c; sourceTree = "<group>"; };
 		97D299FF1A19DF610086819D /* SquareAudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SquareAudio.cpp; path = ../sound/SquareAudio.cpp; sourceTree = "<group>"; };
 		97D29A001A19DF610086819D /* SquareAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareAudio.h; path = ../sound/SquareAudio.h; sourceTree = "<group>"; };
-		97D29A0B1A1A784C0086819D /* PatchBay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PatchBay.cpp; path = ../sound/PatchBay.cpp; sourceTree = "<group>"; };
-		97D29A0C1A1A784C0086819D /* PatchBay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatchBay.h; path = ../sound/PatchBay.h; sourceTree = "<group>"; };
 		97DAF049DC724C42ADA3F5D1 /* b2TimeStep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2TimeStep.h; path = ../blocks/Box2D/src/Box2D/Dynamics/b2TimeStep.h; sourceTree = "<group>"; };
 		98251208D2EA463B86AF5318 /* b2DistanceJoint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2DistanceJoint.cpp; path = ../blocks/Box2D/src/Box2D/Dynamics/Joints/b2DistanceJoint.cpp; sourceTree = "<group>"; };
 		98A074F0E53F4F6BA000D461 /* b2FrictionJoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2FrictionJoint.h; path = ../blocks/Box2D/src/Box2D/Dynamics/Joints/b2FrictionJoint.h; sourceTree = "<group>"; };
@@ -513,6 +512,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				97618D041A3AFF5500BB8FC3 /* pd */,
 				97CECA5C19F354C40000D4C9 /* Paper-2.png */,
 				2AF6128E18F441C9AE128FAB /* CinderApp.icns */,
 				7E84218A64AD43AF976D569B /* Info.plist */,
@@ -645,8 +645,6 @@
 				972FCF511A19CC1700DB193E /* Scale.h */,
 				97D299FF1A19DF610086819D /* SquareAudio.cpp */,
 				97D29A001A19DF610086819D /* SquareAudio.h */,
-				97D29A0B1A1A784C0086819D /* PatchBay.cpp */,
-				97D29A0C1A1A784C0086819D /* PatchBay.h */,
 			);
 			name = basic;
 			path = ../include/basic;
@@ -950,6 +948,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97618D051A3AFF5500BB8FC3 /* pd in Resources */,
 				97D299AD1A19DD5D0086819D /* LICENSE.txt in Resources */,
 				D9C048C591B64F1C87AA5081 /* CinderApp.icns in Resources */,
 				97CECA5D19F354C40000D4C9 /* Paper-2.png in Resources */,
@@ -991,7 +990,6 @@
 				97D299F61A19DD5D0086819D /* x_gui.c in Sources */,
 				97D299E31A19DD5D0086819D /* m_conf.c in Sources */,
 				97D299EF1A19DD5D0086819D /* s_path.c in Sources */,
-				97D29A0D1A1A784C0086819D /* PatchBay.cpp in Sources */,
 				97D299C01A19DD5D0086819D /* d_fftroutine.c in Sources */,
 				15F68D48C41244218E9BE0E4 /* b2TimeOfImpact.cpp in Sources */,
 				24A57011AB0440ADAB9C9A8F /* b2ChainShape.cpp in Sources */,

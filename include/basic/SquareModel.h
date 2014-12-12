@@ -22,15 +22,15 @@ class SquareModel
     inline const ci::Anim< ci::Vec2f >  * getTextureScrollPositionPtr() { return &texture_scroll_position; }
     inline const ci::Anim< float >      * getOpacity() { return &opacity; }
     
-    inline float getSquareRotationAngle() { return square_rotation_angle.operator const float &(); }
-    inline float getSquareRotationVelocity() { return square_rotation_velocity.operator const float &(); }
-    inline float getSquareRotationAcceleration() { return square_rotation_acceleration.operator const float &(); }
-    inline float getTextureRotationAngle() { return texture_rotation_angle.operator const float &(); }
-    inline float getTextureRotationVelocity() { return texture_rotation_velocity.operator const float &(); }
-    inline float getTextureRotationAcceleration() { return texture_rotation_acceleration.operator const float &(); }
-    inline ci::Vec2f getTextureScrollPosition() { return texture_scroll_position.operator const cinder::Vec2<float> &(); }
-    inline ci::Vec2f getTextureScrollVelocity() { return texture_scroll_velocity.operator const cinder::Vec2<float> &(); }
-    inline ci::Vec2f getTextureScrollAcceleration() { return texture_scroll_acceleration.operator const cinder::Vec2<float> &(); }
+    inline float getSquareRotationAngle() const { return square_rotation_angle.operator const float &(); }
+    inline float getSquareRotationVelocity() const { return square_rotation_velocity.operator const float &(); }
+    inline float getSquareRotationAcceleration() const { return square_rotation_acceleration.operator const float &(); }
+    inline float getTextureRotationAngle() const { return texture_rotation_angle.operator const float &(); }
+    inline float getTextureRotationVelocity() const { return texture_rotation_velocity.operator const float &(); }
+    inline float getTextureRotationAcceleration() const { return texture_rotation_acceleration.operator const float &(); }
+    inline ci::Vec2f getTextureScrollPosition() const { return texture_scroll_position.operator const cinder::Vec2<float> &(); }
+    inline ci::Vec2f getTextureScrollVelocity() const { return texture_scroll_velocity.operator const cinder::Vec2<float> &(); }
+    inline ci::Vec2f getTextureScrollAcceleration()const { return texture_scroll_acceleration.operator const cinder::Vec2<float> &(); }
 
     inline void setSquareRotationAngle( const float new_angle ) { square_rotation_angle = new_angle; }
     inline void setSquareRotationVelocity( const float new_velocity ) { square_rotation_velocity = new_velocity; }

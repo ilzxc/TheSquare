@@ -25,6 +25,8 @@ class SquareObject
     
     void interact();
     
+    std::shared_ptr< SquareModel > getModel() { return model; }
+    
   private:
     std::shared_ptr< SquareModel >  model;
     std::shared_ptr< SquareRender > view;
